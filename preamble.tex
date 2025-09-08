@@ -1,0 +1,194 @@
+% packages
+
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+
+\setcounter{chapter}{-1}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue}
+\pagecolor{white}
+\usepackage[many]{tcolorbox}
+\usepackage{minitoc}
+\tcbuselibrary{theorems, skins, hooks}
+\setlength{\parskip}{0.8em}
+\setlength{\parindent}{0em}
+
+% my colors
+
+\definecolor{thrmbg}{HTML}{dbeafe} %blue100
+\definecolor{thrmtxt}{HTML}{1e40af} %blue800
+\definecolor{lemmabg}{HTML}{d1fae5} %emerald100
+\definecolor{lemmatxt}{HTML}{065f46} %emerald800
+\definecolor{corobg}{HTML}{ffe4e6} %rose100
+\definecolor{corotxt}{HTML}{9f1239} %rose800
+\definecolor{defbg}{HTML}{fef3c7} %amber100
+\definecolor{deftxt}{HTML}{92400e} %amber800
+\definecolor{exbg}{HTML}{ede9fe} %purple100
+\definecolor{extxt}{HTML}{5b21b6} %purple800
+\definecolor{propbg}{HTML}{ecfccb} %lime100
+\definecolor{proptxt}{HTML}{3f6212} %lime800
+\definecolor{noticebg}{HTML}{ffcdd2} %red100
+\definecolor{noticetxt}{HTML}{c62828} %red800
+
+% tcb theorems
+
+\newtcbtheorem[number within=chapter]{theorem}{Theorem}
+{%
+	enhanced,
+	colback = thrmbg,
+	frame hidden,
+    breakable,
+    theorem style = plain apart,
+    label type = theorem
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{thrmtxt},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	fonttitle = \bfseries\sffamily\large,
+	description font = \mdseries,
+	separator sign none,
+    coltitle=thrmtxt,
+	segmentation style={solid, thrmtxt},
+    parbox=false
+}
+{theo}
+
+\newtcbtheorem[number within=chapter]{Lemma}{Lemma}
+{%
+	enhanced,
+	colback = lemmabg,
+	frame hidden,
+    breakable,
+    theorem style = plain apart,
+    label type = theorem
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{lemmatxt},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	fonttitle = \bfseries\sffamily\large,
+	description font = \mdseries,
+	separator sign none,
+    coltitle=lemmatxt,
+	segmentation style={solid, lemmatxt},
+    parbox=false
+}
+{theo}
+
+\newtcbtheorem[number within=chapter]{corollary}{Note}
+{%
+	enhanced,
+	colback = corobg,
+	frame hidden,
+    breakable,
+    theorem style = plain apart,
+    label type = theorem
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{corotxt},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	fonttitle = \bfseries\sffamily\large,
+	description font = \mdseries,
+	separator sign none,
+    coltitle=corotxt,
+	segmentation style={solid, corotxt},
+    parbox=false
+}
+{theo}
+
+\newtcbtheorem[number within=chapter]{definition}{Definition}
+{%
+	enhanced,
+	colback = defbg,
+	frame hidden,
+    breakable,
+    theorem style = plain apart,
+    label type = theorem
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{deftxt},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	fonttitle = \bfseries\sffamily\large,
+	description font = \mdseries,
+	separator sign none,
+    coltitle=deftxt,
+	segmentation style={solid, deftxt},
+    parbox=false
+}
+{theo}
+
+\newtcbtheorem[number within=chapter]{example}{Example}
+{%
+	enhanced,
+	colback = exbg,
+    breakable,
+	frame hidden,
+    theorem style = plain apart,
+    label type = theorem
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{extxt},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	fonttitle = \bfseries\sffamily\large,
+	description font = \mdseries,
+	separator sign none,
+    coltitle=extxt,
+	segmentation style={solid, extxt},
+    parbox=false
+}
+{theo}
+
+\newtcbtheorem[number within=chapter]{proposition}{Proposition}
+{%
+	enhanced,
+	colback = propbg,
+    breakable,
+	frame hidden,
+    theorem style = plain apart,
+    label type = theorem
+	boxrule = 0sp,
+	borderline west = {2pt}{0pt}{proptxt},
+	sharp corners,
+	detach title,
+	before upper = \tcbtitle\par\smallskip,
+	fonttitle = \bfseries\sffamily\large,
+	description font = \mdseries,
+	separator sign none,
+    coltitle=proptxt,
+	segmentation style={solid, proptxt},
+    parbox=false
+}
+{theo}
+
+% self-made commands
+
+\newcommand{\thrm}[2]{\begin{theorem}{#1}{}#2\end{theorem}}
+\newcommand{\coro}[2]{\begin{corollary}{#1}{}#2\end{corollary}}
+\newcommand{\lemma}[2]{\begin{Lemma}{#1}{}#2\end{Lemma}}
+\newcommand{\ex}[2]{\begin{example}{#1}{}#2\end{example}}
+\newcommand{\defn}[2]{\begin{definition}{#1}{}#2\end{definition}}
+\newcommand{\prop}[2]{\begin{proposition}{#1}{}#2\end{proposition}}
+
+% \newtcbtheorem[number within=chapter]{lemma}{Lemma}%
+%      {theorem style=plain apart,label type=lemma,colback=blue!10,colframe=blue!90!black,
+%      titlerule=0mm,toptitle=1mm,bottomtitle=1mm, fonttitle=\bfseries\large,fontupper=\normalsize, parbox=false}{theo}
+% \newtcbtheorem[number within=chapter]{coro}{Corollary}%
+%      {theorem style=plain apart,label type=corollary,colback=green!10,colframe=green!40!black,
+%      titlerule=0mm,toptitle=1mm,bottomtitle=1mm, fonttitle=\bfseries\large,fontupper=\normalsize, parbox=false}{theo}
+% \newtcbtheorem[number within=chapter]{defn}{Definition}%
+%      {theorem style=plain apart,label type=definition,colback=red!10,colframe=red!90!black,
+%      titlerule=0mm,toptitle=1mm,bottomtitle=1mm,  fonttitle=\bfseries\large,fontupper=\normalsize, parbox=false}{theo}
+% \newtcbtheorem[number within=chapter]{example}{Example}%
+%      {theorem style=plain apart,label type=example,colback=pink!10,colframe=orange!40!black,
+%      titlerule=0mm,toptitle=1mm,bottomtitle=1mm,  fonttitle=\bfseries\large,fontupper=\normalsize, parbox=false}{theo}
+
